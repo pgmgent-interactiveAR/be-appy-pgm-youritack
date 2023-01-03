@@ -1,0 +1,25 @@
+.button{
+    background-color: #cf6679;
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    .front{
+        display: block;
+        padding: 12px 42px;
+        border-radius: 12px;
+        background-color: #e08d9c;
+        font-size: 1.25rem;
+        font-family: 'Fredoka One';
+        transform: translateY(-6px);
+        color: blueviolet;
+
+    }
+}
+.imageButton{
+    height: 50px;
+}
+.button:active .front {
+    transform: translateY(-2px);
+  }

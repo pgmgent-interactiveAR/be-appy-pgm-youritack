@@ -6,8 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div class="splash">
+      <div class="title">
+        <span>B</span>
+        <span>E</span>
+        <span>A</span>
+        <span>P</span>
+        <span>P</span>
+        <span>Y</span>
+      </div>
+      <div class="splash-tutorial">
+      if you are bored in class you got these options:
+      <ul>
+        <li>dancing teachers</li>
+        <li>play with an animal</li>
+        <li>get a inspirational quotes</li>
+      </ul>
+      </div>
+      <button class="button" id="hideSplash">
+        <span class="front">Continue</span>
+      </button>
+    </div>
+
+    <div class="mainmenu">
+      <div class="title">
+        <span>B</span>
+        <span>E</span>
+        <span>A</span>
+        <span>P</span>
+        <span>P</span>
+        <span>Y</span>
+      </div>
+      <div class="buttonlist">
+        <button class="button">
+          <img class="front imageButton" src="./public/assets/svgs/dancing.svg">
+        </button>
+        <button class="button">
+          <img class="front imageButton" src="./public/assets/svgs/capybara.svg">
+        </button>
+        <button class="button">
+          <img class="front imageButton" src="./public/assets/svgs/quote.svg">
+        </button>
+      </div>
+    </div>
+    <script type="module" src="scripts/app.js"></script>
   </body>
 </html>

@@ -1,0 +1,35 @@
+.title {
+    display: inline-block;
+    height: 70px;
+    font-family: 'Fredoka One';
+    font-weight: bold;
+    font-size : 45px;
+    :nth-child(odd){
+        position: relative;
+        color: yellow;
+        top: 5px;
+        text-shadow:
+        -3px -3px 0 darkred,
+        3px -3px 0 darkred,
+        -3px 3px 0 darkred,
+        3px 3px 0 darkred,
+        4px 4px 0 yellow,
+        5px 5px 0 yellow,
+        6px 6px 0 yellow,
+        7px 7px 0 yellow;
+    }
+    :nth-child(even){
+        color: orange;
+        position: relative;
+        top: -5px;
+        text-shadow:
+        -3px -3px 0 darkred,
+        3px -3px 0 darkred,
+        -3px 3px 0 darkred,
+        3px 3px 0 darkred,
+        4px 4px 0 orange,
+        5px 5px 0 orange,
+        6px 6px 0 orange,
+        7px 7px 0 orange;
+    }
+}

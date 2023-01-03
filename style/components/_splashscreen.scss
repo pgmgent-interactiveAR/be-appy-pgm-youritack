@@ -1,0 +1,18 @@
+.splash{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: darkred;
+    transition: all ease-in-out 600ms;
+    display : flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items : center;
+    z-index: 15;
+      .splash-tutorial{
+        color: white;
+        font-family: consolas;
+        padding: 2rem;
+      }
+}
