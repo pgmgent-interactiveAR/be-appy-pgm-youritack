@@ -1,4 +1,5 @@
 import "../style/main.scss"
+import menus from "./menus";
 import splashscreen from './splashscreen.js';
 const initApp=()=>{
 
@@ -8,6 +9,12 @@ const initApp=()=>{
     } catch (error) {
         
     }
+    try {
+        menus();
+    } catch (error) {
+        
+    }
+    
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

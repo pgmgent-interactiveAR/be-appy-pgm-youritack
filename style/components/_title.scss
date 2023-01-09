@@ -7,7 +7,7 @@
     :nth-child(odd){
         position: relative;
         color: yellow;
-        top: 5px;
+        animation: moveDownUp 2s linear infinite ;
         text-shadow:
         -3px -3px 0 darkred,
         3px -3px 0 darkred,
@@ -21,7 +21,7 @@
     :nth-child(even){
         color: orange;
         position: relative;
-        top: -5px;
+        animation: MoveUpDown 2s linear infinite;
         text-shadow:
         -3px -3px 0 darkred,
         3px -3px 0 darkred,
@@ -33,3 +33,19 @@
         7px 7px 0 orange;
     }
 }
+@keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 10px;
+    }
+  }
+  @keyframes moveDownUp {
+    0%, 100% {
+      bottom: 10px;
+    }
+    50% {
+      bottom: 0px;
+    }
+  }

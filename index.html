@@ -8,7 +8,6 @@
   </head>
 
   <body>
-
     <!--splashscreen-->
     <div class="splash">
       <div class="title">
@@ -45,11 +44,11 @@
       <div class="buttonlist">
         <button class="button" id="dancingTeacherMenu">
           <img
-          class="front imageButton"
-          src="./public/assets/svgs/dancing.svg"
-        />
+            class="front imageButton"
+            src="./public/assets/svgs/dancing.svg"
+          />
         </button>
-        <button class="button" id="petMenu">
+        <button class="button" id="petMenuButton">
           <img
             class="front imageButton"
             src="./public/assets/svgs/capybara.svg"
@@ -61,14 +60,25 @@
       </div>
     </div>
 
-        <!--animalmenu-->
-    <div class="hidden animalmenu">
-      <div class="dropdownmenu"></div>
+    <!--animalmenu-->
+    <div class="hidden interactions" id="petMenu">
 
-      <button class="addAsset">
-        <img src="./public/assets/svgs/plus.svg" alt="">
+      <div class="dropup">
+        <button class="dropbtn">interaction</button>
+        <div class="dropup-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <button class="button" id="addAsset">
+        <img
+          class="front imageButton"
+          src="./public/assets/svgs/plus.svg"
+        />
       </button>
 
+      <button class="backbutton"></button>
     </div>
     <script type="module" src="scripts/app.js"></script>
   </body>
