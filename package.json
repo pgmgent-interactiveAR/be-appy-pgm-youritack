@@ -12,5 +12,8 @@
     "sass": "^1.57.1",
     "vite": "^4.0.0",
     "vite-plugin-mkcert": "^1.10.1"
+  },
+  "dependencies": {
+    "three": "^0.148.0"
   }
 }

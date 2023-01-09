@@ -1,6 +1,7 @@
 import "../style/main.scss"
 import menus from "./menus";
 import splashscreen from './splashscreen.js';
+import app from "./ar";
 const initApp=()=>{
 
     
@@ -11,6 +12,11 @@ const initApp=()=>{
     }
     try {
         menus();
+    } catch (error) {
+        
+    }
+       try {
+        app();
     } catch (error) {
         
     }

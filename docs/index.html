@@ -5,12 +5,11 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="./assets/index-53fe7db6.js"></script>
-    <link rel="stylesheet" href="./assets/index-b1b2c1eb.css">
+    <script type="module" crossorigin src="./assets/index-2e1adb8b.js"></script>
+    <link rel="stylesheet" href="./assets/index-7eca1c89.css">
   </head>
 
   <body>
-
     <!--splashscreen-->
     <div class="splash">
       <div class="title">
@@ -47,11 +46,11 @@
       <div class="buttonlist">
         <button class="button" id="dancingTeacherMenu">
           <img
-          class="front imageButton"
-          src="./assets/dancing-96e82480.svg"
-        />
+            class="front imageButton"
+            src="./assets/dancing-96e82480.svg"
+          />
         </button>
-        <button class="button" id="petMenu">
+        <button class="button" id="petMenuButton">
           <img
             class="front imageButton"
             src="./assets/capybara-cbb070a8.svg"
@@ -63,14 +62,25 @@
       </div>
     </div>
 
-        <!--animalmenu-->
-    <div class="hidden animalmenu">
-      <div class="dropdownmenu"></div>
+    <!--animalmenu-->
+    <div class="hidden interactions" id="petMenu">
 
-      <button class="addAsset">
-        <img src="./assets/plus-cfc1f1df.svg" alt="">
+      <div class="dropup">
+        <button class="dropbtn">interaction</button>
+        <div class="dropup-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <button class="button" id="addAsset">
+        <img
+          class="front imageButton"
+          src="./assets/plus-cfc1f1df.svg"
+        />
       </button>
 
+      <button class="backbutton"></button>
     </div>
     
   </body>
