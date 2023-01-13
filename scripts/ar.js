@@ -13,8 +13,9 @@ const app = () => {
 
   const activateXR = async () => {
     // create canvas and initialize WebGL Context
+    const indexscene = document.querySelector('.indexscene');
     const canvas = document.createElement('canvas');
-    document.body.appendChild(canvas);
+    indexscene.appendChild(canvas);
     const gl = canvas.getContext('webgl', { xrCompatible: true });
 
     // create scene to draw object on
