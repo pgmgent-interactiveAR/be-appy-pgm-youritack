@@ -69,7 +69,8 @@ const app = () => {
     session.updateRenderState({
       baseLayer: new XRWebGLLayer(session, gl),
     });
-    session.addEventListener('select', (event) => {
+    const addAsset = document.querySelector('#addAsset');
+    addAsset.addEventListener('click', (event) => {
       if (animal) {
         const clone = animal.clone();
         clone.position.copy(reticle.position);
