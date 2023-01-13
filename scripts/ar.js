@@ -1,4 +1,4 @@
-import animalUrl from './capybara.glb?url'
+import animalUrl from './capybara_ps1_style.glb?url'
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 const app = () => {
