@@ -1,4 +1,4 @@
-import animalUrl from './capybara.glb?url'
+import animalUrl from './capybara3.glb?url'
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 const app = () => {
@@ -40,9 +40,10 @@ const app = () => {
       function (gltf) {
         animal = gltf.scene;
         // animal.position.set(0,0,-2);
-        animal.scale.set(.1,.1,.1);
+        animal.scale.set(1,1,1);
         animal.rotateY(-90);
         animal.visible = true;
+        scene.add(animal);
       }
     );
     
