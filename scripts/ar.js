@@ -13,9 +13,8 @@ const app = () => {
 
   const activateXR = async () => {
     // create canvas and initialize WebGL Context
-    const indexscene = document.querySelector('.indexscene');
     const canvas = document.createElement('canvas');
-    indexscene.appendChild(canvas);
+    document.body.appendChild(canvas);
     const gl = canvas.getContext('webgl', { xrCompatible: true });
 
     // create scene to draw object on
@@ -67,7 +66,8 @@ const app = () => {
     session.updateRenderState({
       baseLayer: new XRWebGLLayer(session, gl),
     });
-    session.addEventListener('select', (event) => {
+    const addAsset = document.querySelector('#addAsset');
+    addAsset.addEventListener('click', (event) => {
       if (animal) {
         const clone = animal.clone();
         clone.position.copy(reticle.position);
