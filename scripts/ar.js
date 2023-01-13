@@ -43,7 +43,6 @@ const app = () => {
         animal.scale.set(.1,.1,.1);
         animal.rotateY(-90);
         animal.visible = true;
-        scene.add(animal);
       }
     );
     
