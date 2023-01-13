@@ -43,7 +43,7 @@ const app = () => {
         animal.scale.set(1,1,1);
         animal.rotateY(-90);
         animal.visible = true;
-        scene.add(animal);
+
       }
     );
     
@@ -60,9 +60,9 @@ const app = () => {
     camera.matrixAutoUpdate = false;
 
     const session = await navigator.xr.requestSession('immersive-ar', {
-      optionalFeatures:['dom-overlay'],
-      requiredFeatures: ['hit-test','local'],
-      domOverlay:{root: document.getElementById('petMenu')},
+      // optionalFeatures:['dom-overlay'],
+      requiredFeatures: ['hit-test'],
+      // domOverlay:{root: document.getElementById('petMenu')},
     });
 
     session.updateRenderState({
@@ -70,6 +70,7 @@ const app = () => {
     });
     const addAsset = document.querySelector('#addAsset');
     session.addEventListener('click', (event) => {
+      scene.add(animal);
       if (animal) {
         const clone = animal.clone();
         clone.position.copy(reticle.position);
