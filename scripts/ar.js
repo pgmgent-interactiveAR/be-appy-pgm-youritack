@@ -61,7 +61,9 @@ const app = () => {
     camera.matrixAutoUpdate = false;
 
     const session = await navigator.xr.requestSession('immersive-ar', {
+      optionalFeatures: ['dom-overlay'],
       requiredFeatures: ['hit-test'],
+      domOverlay: {root: document.getElementById('petMenu')},
     });
 
     session.updateRenderState({
