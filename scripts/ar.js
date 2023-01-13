@@ -1,4 +1,4 @@
-import animalUrl from './capybara_ps1_style.glb?url'
+import animalUrl from './capybara3.glb?url'
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 const app = () => {
@@ -38,12 +38,13 @@ const app = () => {
     loader.load(
       animalUrl,
       function (gltf) {
+        console.log(gltf);  
         animal = gltf.scene;
         // animal.position.set(0,0,-2);
-        animal.scale.set(1,1,1);
+        animal.scale.set(.1,.1,.1);
         animal.rotateY(-90);
         animal.visible = true;
-
+        scene.add(animal);
       }
     );
     
@@ -60,17 +61,13 @@ const app = () => {
     camera.matrixAutoUpdate = false;
 
     const session = await navigator.xr.requestSession('immersive-ar', {
-      // optionalFeatures:['dom-overlay'],
       requiredFeatures: ['hit-test'],
-      // domOverlay:{root: document.getElementById('petMenu')},
     });
 
     session.updateRenderState({
       baseLayer: new XRWebGLLayer(session, gl),
     });
-    const addAsset = document.querySelector('#addAsset');
-    session.addEventListener('click', (event) => {
-      scene.add(animal);
+    session.addEventListener('select', (event) => {
       if (animal) {
         const clone = animal.clone();
         clone.position.copy(reticle.position);
