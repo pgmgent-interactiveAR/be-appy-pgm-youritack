@@ -74,6 +74,7 @@ const app = () => {
       if (animal) {
         const clone = SkeletonUtils.clone(animal);
         clone.position.copy(reticle.position);
+        clone.rotation.y = Math.atan2( ( camera.position.x - clone.position.x ), ( camera.position.z - clone.position.z ) );
         scene.add(clone);
       }
     });
