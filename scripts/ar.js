@@ -1,6 +1,7 @@
-import animalUrl from './fox.glb?url'
+import animalUrl from './capybara2.glb?url';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js';
 const app = () => {
   const init = () => {
     console.log(navigator.xr);
@@ -38,10 +39,10 @@ const app = () => {
     loader.load(
       animalUrl,
       function (gltf) {
-        console.log(gltf);  
         animal = gltf.scene;
-        animal.position.set(0,0,-2);
-        animal.scale.set(.2, .2, .2);
+        // animal.position.set(0,0,-2);
+        animal.scale.set(.2,.2,.2);
+        animal.rotateY(-90);
         animal.visible = true;
         scene.add(animal);
       }
@@ -60,9 +61,7 @@ const app = () => {
     camera.matrixAutoUpdate = false;
 
     const session = await navigator.xr.requestSession('immersive-ar', {
-      optionalFeatures: ['dom-overlay'],
       requiredFeatures: ['hit-test'],
-      domOverlay: {root: document.getElementById('petMenu')},
     });
 
     session.updateRenderState({
@@ -70,8 +69,8 @@ const app = () => {
     });
     const addAsset = document.querySelector('#addAsset');
     addAsset.addEventListener('click', (event) => {
-      if (animal != null) {
-        const clone = animal.clone();
+      if (animal) {
+        const clone = SkeletonUtils.clone(animal);
         clone.position.copy(reticle.position);
         scene.add(clone);
       }
