@@ -41,10 +41,10 @@ const app = () => {
       function (gltf) {
         animal = gltf.scene;
         // animal.position.set(0,0,-2);
-        animal.scale.set(.2,.2,.2);
+        animal.scale.set(.05,.05,.05);
         animal.rotateY(-90);
         animal.visible = true;
-        scene.add(animal);
+        // scene.add(animal);
       }
     );
     
