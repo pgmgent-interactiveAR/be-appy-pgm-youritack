@@ -28,7 +28,6 @@
     }
     .dropup-content {
         text-align: center;
-      display: none;
       position: absolute;
       bottom: 50px;
       background-color: orange;
@@ -36,17 +35,21 @@
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
-      a {
+      input {
         color: black;
+        border: none;
         border-bottom: 1px solid gray;
+        background-color: transparent;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
+        width: 100%;
+        &:hover{
+          background-color: darkorange;
+        }
         &:last-child{
             border:none;
         }
-        &:hover{
-            background-color: darkorange;
             &:first-child{
                 border-radius: 25px 25px 0px 0px;
             }
@@ -55,9 +58,5 @@
             }
         }
       }
-    }
-    &:visited .dropup-content{
-        display: block;
-    }
   }
 }

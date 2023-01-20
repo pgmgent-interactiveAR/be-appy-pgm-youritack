@@ -1,7 +1,7 @@
 import "../style/main.scss"
 import menus from "./menus";
 import splashscreen from './splashscreen.js';
-import app from "./ar";
+import animal from "./animal";
 const initApp=()=>{
 
     
@@ -16,7 +16,7 @@ const initApp=()=>{
         
     }
        try {
-        app();
+        animal();
     } catch (error) {
         
     }
