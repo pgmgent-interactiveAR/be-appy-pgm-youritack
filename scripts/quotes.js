@@ -25,8 +25,8 @@ const randomquote = quotes[Math.floor(Math.random()*quotes.length)];
 const image = document.querySelector('#my-image');
 const quote = document.querySelector('#quote');
 console.log(image);
-image.src=`./public/backgrounds/${background}`
-quote.setAttribute('value',randomquote)
+image.src=`./public/backgrounds/${background}`;
+quote.setAttribute('value',randomquote);
 })
 
 
