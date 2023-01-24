@@ -1,26 +1,16 @@
-import "../style/main.scss"
-import menus from "./menus";
-import splashscreen from './splashscreen.js';
-import animal from "./animal";
-const initApp=()=>{
-
-    
-    try {
-        splashscreen();
-    } catch (error) {
-        
-    }
-    try {
-        menus();
-    } catch (error) {
-        
-    }
-       try {
-        animal();
-    } catch (error) {
-        
-    }
-    
-}
+import '../style/main.scss';
+import menus from './menus';
+import animal from './animal';
+import teacher from './teacher';
+const initApp = () => {};
+try {
+  menus();
+} catch (error) {}
+try {
+  animal();
+} catch (error) {}
+try {
+  teacher();
+} catch (error) {}
 
 document.addEventListener('DOMContentLoaded', initApp);

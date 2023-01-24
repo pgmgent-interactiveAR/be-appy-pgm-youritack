@@ -10,6 +10,7 @@ export default defineConfig({
       watch: {
         
       },
+      host:true,
     },
     plugins: [ mkcert() ],
     // The watched package must be excluded from optimization,

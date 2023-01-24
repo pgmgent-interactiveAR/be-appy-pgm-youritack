@@ -1,15 +1,16 @@
-import animalUrl from './capybara2.glb?url';
+import personUrl from './Helena-lowres-animations.glb?url';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js';
 const clock = new THREE.Clock();
 let mixers = [];
-const animal = () => {
+let targetObject=null;
+const teacher = () => {
   const init = () => {
     console.log(navigator.xr);
     if (navigator.xr) {
       document
-        .querySelector('#petMenuButton')
+        .querySelector('#dancingTeacherMenuButton')
         .addEventListener('click', activateXR);
     } else {
       alert('not comp');
@@ -39,17 +40,15 @@ const animal = () => {
       }
     );
     let clips = null;
-    let model;
-    loader.load(animalUrl, function (gltf) {
-      model = gltf.scene;
+    let animal;
+    loader.load(personUrl, function (gltf) {
+      animal = gltf.scene;
       // animal.position.set(0,0,-2);
-      clips = gltf.animations.filter((animation) => {
-        return animation.name.length < 10;
-      });
+      clips = gltf.animations;
       console.log(clips);
-      model.scale.set(0.05, 0.05, 0.05);
-      model.rotateY(-90);
-      model.visible = true;
+      animal.scale.set(0.001, 0.001, 0.001);
+      animal.rotateY(-90);
+      animal.visible = true;
       // scene.add(animal);
 
 
@@ -70,13 +69,13 @@ const animal = () => {
     const session = await navigator.xr.requestSession('immersive-ar', {
       optionalFeatures: ['dom-overlay'],
       requiredFeatures: ['hit-test'],
-      domOverlay: { root: document.getElementById('petmenuDOM') },
+      domOverlay: { root: document.getElementById('teachermenuDom') },
     });
 
     session.updateRenderState({
       baseLayer: new XRWebGLLayer(session, gl),
     });
-    
+    const addAsset = document.querySelector('#addTeacher');
 
     const playanimation = document.querySelectorAll('.playanimation');
     playanimation.forEach((el) =>
@@ -87,10 +86,10 @@ const animal = () => {
 
 
 
-  const addAsset = document.querySelector('#addAnimal');
+
     addAsset.addEventListener('click', (event) => {
       if (animal) {
-        const clone = SkeletonUtils.clone(model);
+        const clone = SkeletonUtils.clone(animal);
         clone.position.copy(reticle.position);
         const mixer = new THREE.AnimationMixer(clone);
         let skeleton = new THREE.SkeletonHelper(clone);
@@ -165,11 +164,12 @@ const animal = () => {
     };
     session.requestAnimationFrame(onXRFrame);
 
-    document.querySelector('#closeAnimal').addEventListener('click',()=>{
-      document.querySelector('#petMenu').classList.add('hidden');
+    document.querySelector('#closeTeacher').addEventListener('click',()=>{
+      document.querySelector('#dancingTeacherMenu').classList.add('hidden');
       document.querySelector('#mainmenu').classList.remove('hidden');
       document.querySelector('#mainmenu').style.opacity = 1;
       session.end();
+
       
     })
 
@@ -179,4 +179,4 @@ const animal = () => {
   init();
 };
 
-export default animal;
+export default teacher;

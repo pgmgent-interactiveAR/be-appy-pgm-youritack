@@ -2,8 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Be-APPY</title>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
 
   <body>
@@ -20,7 +25,7 @@
       </div>
 
       <div class="buttonlist">
-        <button class="button" id="dancingTeacherMenu">
+        <button class="button" id="dancingTeacherMenuButton">
           <img
             class="front imageButton"
             src="./public/assets/svgs/dancing.svg"
@@ -49,13 +54,33 @@
             <input type="button" class="playanimation" value="walk">
           </div>
         </div>
-        <button class="button" id="addAsset">
+        <button class="button" id="addAnimal">
           <img class="front imageButton" src="./public/assets/svgs/plus.svg" />
         </button>
-
-        <button class="backbutton"></button>
+        <button class="button " id="closeAnimal"><img class="front imageButton" src="./public/assets/svgs/return.svg" /></button>
       </div>
     </div>
+
+    <div id="teachermenuDom">
+      <div class="hidden interactions" id="dancingTeacherMenu">
+        <div class="dropup">
+          <button class="dropbtn dropbtnTeacher">interaction</button>
+          <div class="dropup-content dropup-contentTeacher hidden">
+            <input type="button" class="playanimation" value="flair">
+            <input type="button" class="playanimation" value="sillydance2">
+            <input type="button" class="playanimation" value="twerk">
+            <input type="button" class="playanimation" value="sillydance1">
+          </div>
+        </div>
+        <button class="button" id="addTeacher">
+          <img class="front imageButton" src="./public/assets/svgs/plus.svg" />
+        </button>
+        <button class="button" id="closeTeacher"><img class="front imageButton" src="./public/assets/svgs/return.svg" /></button>
+      </div>
+    </div>
+    
+
+
 
     <script type="module" src="scripts/app.js"></script>
   </body>
