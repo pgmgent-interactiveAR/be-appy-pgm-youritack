@@ -16,7 +16,7 @@ const randomquote = quotes[Math.floor(Math.random()*quotes.length)];
 const image = document.querySelector('#my-image');
 const quote = document.querySelector('#quote');
 const refresh = document.querySelector('#refresh');
-image.src=`../assets/backgrounds/${background}`
+image.src=`../backgrounds/${background}`
 quote.setAttribute('value',randomquote)
 
 refresh.addEventListener('click',()=>{
